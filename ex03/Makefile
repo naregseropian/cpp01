@@ -1,7 +1,7 @@
-NAME = zombiehorde
+NAME = uviolence
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -g -std=c++98 -pedantic-errors
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp
+SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
