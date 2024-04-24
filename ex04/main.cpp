@@ -32,16 +32,15 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    // init in and out files
+    // init in file
+    // ifstream is an object that reads from a file
     std::ifstream infile(infileName.c_str());
     if (!infile.is_open())
     {
         std::cerr << "Error\nCould not open " << infileName << std::endl;
         return 1;
     }
-    // what does stringstream do?
     std::stringstream buffer;
-    // what does .rdbuf() do?
     buffer << infile.rdbuf();
     if (!buffer)
     {
@@ -49,17 +48,16 @@ int main(int argc, char **argv)
         return 1;
     }
     // fills buffer with infile's content
-    // what does .str() do?
+    // .str() returns a copy of the content of buffer
     std::string content = buffer.str();
     infile.close();
 
     // replace s1 with s2
-    // what does .find() return if it does not 'find' its sting?
     std::size_t pos = content.find(s1);
-    std::cout << pos << std::endl;
+    // return the position of the first occurence
+    // std::cout << pos << std::endl;
     while (pos != std::string::npos && pos < content.length())
     {
-        // how does .erase() and .insert() work?
         content.erase(pos, s1.length());
         content.insert(pos, s2);
         pos += s2.length();

@@ -6,12 +6,17 @@
 
 class Zombie
 {
-    std::string name;
-
     public:
-	    Zombie(std::string name);
-	    ~Zombie();
+        Zombie(); // default constructor
+	    Zombie(std::string& name); // parametrized constructor
+	    ~Zombie(); // default destructor
+
+        const std::string& getZombie(void) const;
+        void    setZombie(std::string& name);
         void    announce(void);
+   
+    private:
+        std::string _name;
 };
 
 Zombie* newZombie(std::string name);

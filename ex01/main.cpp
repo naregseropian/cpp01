@@ -4,8 +4,8 @@ int main(void)
 {
     Zombie  *zombiePtr;
 
-    zombiePtr = zombieHorde(10, "Zombie");
-    for (int i = 0; i < 10; i++){
+    zombiePtr = zombieHorde(3, "Zombie");
+    for (int i = 0; i < 3; i++){
 		zombiePtr[i].announce();
 	}
     delete[] zombiePtr;
